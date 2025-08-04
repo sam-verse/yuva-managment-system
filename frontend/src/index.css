@@ -1,0 +1,491 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Guild Hub Control - Professional Admin Panel Design System */
+
+@layer base {
+  :root {
+    /* Light Theme - Professional Admin Panel */
+    --background: 0 0% 99%;
+    --foreground: 220 13% 18%;
+    
+    /* Card & Surface */
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    
+    /* Navigation & Panels */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+    
+    /* Primary Brand - Deep Professional Blue */
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 217 91% 55%;
+    
+    /* Secondary - Clean Gray */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 13% 18%;
+    --secondary-hover: 220 14% 93%;
+    
+    /* Accent Colors - Orange & Green */
+    --accent-orange: 25 95% 53%;
+    --accent-orange-foreground: 0 0% 100%;
+    --accent-green: 142 71% 45%;
+    --accent-green-foreground: 0 0% 100%;
+    
+    /* Muted Elements */
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    
+    /* Interactive States */
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
+    
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 25 95% 53%;
+    --warning-foreground: 0 0% 100%;
+    
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
+    
+    /* Layout */
+    --radius: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 220 13% 18%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 220 13% 18%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Professional Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(217 91% 70%));
+    --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%), hsl(25 95% 63%));
+    --gradient-hero: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(25 95% 53%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
+    
+    /* Professional Shadows */
+    --shadow-elegant: 0 4px 20px -2px hsl(217 91% 60% / 0.1);
+    --shadow-card: 0 2px 8px -1px hsl(220 13% 18% / 0.06);
+    --shadow-floating: 0 8px 30px -4px hsl(217 91% 60% / 0.15);
+    --shadow-glow: 0 0 30px hsl(217 91% 60% / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+
+  .dark {
+    /* Dark Theme - Dark Navy Blue */
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    
+    /* Card & Surface - Dark Navy */
+    --card: 224 71% 4%;
+    --card-foreground: 213 31% 91%;
+    
+    /* Navigation & Panels - Dark Navy */
+    --popover: 224 71% 4%;
+    --popover-foreground: 213 31% 91%;
+    
+    /* Primary Brand - Blue for Dark Navy Mode */
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    
+    /* Secondary - Dark Navy */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    
+    /* Muted Elements - Dark Navy */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    /* Interactive States */
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    
+    /* Status Colors */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    /* Borders & Inputs - Dark Navy */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
+    
+    /* Sidebar - Dark Navy */
+    --sidebar-background: 224 71% 4%;
+    --sidebar-foreground: 213 31% 91%;
+    --sidebar-primary: 217.2 91.2% 59.8%;
+    --sidebar-primary-foreground: 222.2 84% 4.9%;
+    --sidebar-accent: 217.2 32.6% 17.5%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217.2 32.6% 17.5%;
+    --sidebar-ring: 224.3 76.3% 94.1%;
+    
+    /* Chart Colors for Dark Navy */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+
+  /* Dashboard Color Themes */
+  .theme-blue {
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --ring: 221.2 83.2% 53.3%;
+  }
+
+  .theme-green {
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+    --ring: 142.1 76.2% 36.3%;
+  }
+
+  .theme-orange {
+    --primary: 24.6 95% 53.1%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --ring: 24.6 95% 53.1%;
+  }
+
+  .theme-purple {
+    --primary: 262.1 83.3% 57.8%;
+    --primary-foreground: 210 40% 98%;
+    --ring: 262.1 83.3% 57.8%;
+  }
+
+  /* Hover and Active States for Dashboard Colors - More Specific */
+  .theme-blue .hover\:bg-primary:hover,
+  .theme-blue button:hover,
+  .theme-blue .bg-primary:hover {
+    background-color: hsl(221.2 83.2% 45%) !important;
+  }
+
+  .theme-blue .hover\:bg-primary\/90:hover {
+    background-color: hsl(221.2 83.2% 53.3% / 0.9) !important;
+  }
+
+  .theme-blue .active\:bg-primary:active,
+  .theme-blue button:active {
+    background-color: hsl(221.2 83.2% 40%) !important;
+  }
+
+  .theme-green .hover\:bg-primary:hover,
+  .theme-green button:hover,
+  .theme-green .bg-primary:hover {
+    background-color: hsl(142.1 76.2% 30%) !important;
+  }
+
+  .theme-green .hover\:bg-primary\/90:hover {
+    background-color: hsl(142.1 76.2% 36.3% / 0.9) !important;
+  }
+
+  .theme-green .active\:bg-primary:active,
+  .theme-green button:active {
+    background-color: hsl(142.1 76.2% 25%) !important;
+  }
+
+  .theme-orange .hover\:bg-primary:hover,
+  .theme-orange button:hover,
+  .theme-orange .bg-primary:hover {
+    background-color: hsl(24.6 95% 45%) !important;
+  }
+
+  .theme-orange .hover\:bg-primary\/90:hover {
+    background-color: hsl(24.6 95% 53.1% / 0.9) !important;
+  }
+
+  .theme-orange .active\:bg-primary:active,
+  .theme-orange button:active {
+    background-color: hsl(24.6 95% 40%) !important;
+  }
+
+  .theme-purple .hover\:bg-primary:hover,
+  .theme-purple button:hover,
+  .theme-purple .bg-primary:hover {
+    background-color: hsl(262.1 83.3% 50%) !important;
+  }
+
+  .theme-purple .hover\:bg-primary\/90:hover {
+    background-color: hsl(262.1 83.3% 57.8% / 0.9) !important;
+  }
+
+  .theme-purple .active\:bg-primary:active,
+  .theme-purple button:active {
+    background-color: hsl(262.1 83.3% 45%) !important;
+  }
+
+  /* Additional specific selectors for buttons and interactive elements */
+  .theme-blue [class*="hover:bg-primary"]:hover,
+  .theme-blue .btn:hover,
+  .theme-blue .button:hover,
+  .theme-blue [role="button"]:hover {
+    background-color: hsl(221.2 83.2% 45%) !important;
+  }
+
+  .theme-green [class*="hover:bg-primary"]:hover,
+  .theme-green .btn:hover,
+  .theme-green .button:hover,
+  .theme-green [role="button"]:hover {
+    background-color: hsl(142.1 76.2% 30%) !important;
+  }
+
+  .theme-orange [class*="hover:bg-primary"]:hover,
+  .theme-orange .btn:hover,
+  .theme-orange .button:hover,
+  .theme-orange [role="button"]:hover {
+    background-color: hsl(24.6 95% 45%) !important;
+  }
+
+  .theme-purple [class*="hover:bg-primary"]:hover,
+  .theme-purple .btn:hover,
+  .theme-purple .button:hover,
+  .theme-purple [role="button"]:hover {
+    background-color: hsl(262.1 83.3% 50%) !important;
+  }
+
+  /* Focus states for dashboard colors */
+  .theme-blue .focus\:ring-primary:focus {
+    --tw-ring-color: hsl(221.2 83.2% 53.3%);
+  }
+
+  .theme-green .focus\:ring-primary:focus {
+    --tw-ring-color: hsl(142.1 76.2% 36.3%);
+  }
+
+  .theme-orange .focus\:ring-primary:focus {
+    --tw-ring-color: hsl(24.6 95% 53.1%);
+  }
+
+  .theme-purple .focus\:ring-primary:focus {
+    --tw-ring-color: hsl(262.1 83.3% 57.8%);
+  }
+
+  /* Override CSS custom properties for hover states */
+  .theme-blue {
+    --hover-primary: hsl(221.2 83.2% 45%);
+    --active-primary: hsl(221.2 83.2% 40%);
+  }
+
+  .theme-green {
+    --hover-primary: hsl(142.1 76.2% 30%);
+    --active-primary: hsl(142.1 76.2% 25%);
+  }
+
+  .theme-orange {
+    --hover-primary: hsl(24.6 95% 45%);
+    --active-primary: hsl(24.6 95% 40%);
+  }
+
+  .theme-purple {
+    --hover-primary: hsl(262.1 83.3% 50%);
+    --active-primary: hsl(262.1 83.3% 45%);
+  }
+
+  /* Use CSS custom properties for hover states */
+  .theme-blue .hover\:bg-primary:hover {
+    background-color: var(--hover-primary) !important;
+  }
+
+  .theme-green .hover\:bg-primary:hover {
+    background-color: var(--hover-primary) !important;
+  }
+
+  .theme-orange .hover\:bg-primary:hover {
+    background-color: var(--hover-primary) !important;
+  }
+
+  .theme-purple .hover\:bg-primary:hover {
+    background-color: var(--hover-primary) !important;
+  }
+
+  /* Comprehensive hover state overrides */
+  .theme-blue *[class*="bg-primary"]:hover,
+  .theme-blue *[class*="hover:bg-primary"]:hover {
+    background-color: var(--hover-primary) !important;
+  }
+
+  .theme-green *[class*="bg-primary"]:hover,
+  .theme-green *[class*="hover:bg-primary"]:hover {
+    background-color: var(--hover-primary) !important;
+  }
+
+  .theme-orange *[class*="bg-primary"]:hover,
+  .theme-orange *[class*="hover:bg-primary"]:hover {
+    background-color: var(--hover-primary) !important;
+  }
+
+  .theme-purple *[class*="bg-primary"]:hover,
+  .theme-purple *[class*="hover:bg-primary"]:hover {
+    background-color: var(--hover-primary) !important;
+  }
+
+  /* Border colors for dashboard themes */
+  .theme-blue .border-primary {
+    border-color: hsl(221.2 83.2% 53.3%);
+  }
+
+  .theme-green .border-primary {
+    border-color: hsl(142.1 76.2% 36.3%);
+  }
+
+  .theme-orange .border-primary {
+    border-color: hsl(24.6 95% 53.1%);
+  }
+
+  .theme-purple .border-primary {
+    border-color: hsl(262.1 83.3% 57.8%);
+  }
+
+  /* Text colors for dashboard themes */
+  .theme-blue .text-primary {
+    color: hsl(221.2 83.2% 53.3%);
+  }
+
+  .theme-green .text-primary {
+    color: hsl(142.1 76.2% 36.3%);
+  }
+
+  .theme-orange .text-primary {
+    color: hsl(24.6 95% 53.1%);
+  }
+
+  .theme-purple .text-primary {
+    color: hsl(262.1 83.3% 57.8%);
+  }
+
+  /* Additional hover states for buttons and interactive elements */
+  .theme-blue .hover\:bg-primary\/80:hover {
+    background-color: hsl(221.2 83.2% 53.3% / 0.8);
+  }
+
+  .theme-green .hover\:bg-primary\/80:hover {
+    background-color: hsl(142.1 76.2% 36.3% / 0.8);
+  }
+
+  .theme-orange .hover\:bg-primary\/80:hover {
+    background-color: hsl(24.6 95% 53.1% / 0.8);
+  }
+
+  .theme-purple .hover\:bg-primary\/80:hover {
+    background-color: hsl(262.1 83.3% 57.8% / 0.8);
+  }
+
+  /* Outline button hover states */
+  .theme-blue .hover\:bg-primary\/10:hover {
+    background-color: hsl(221.2 83.2% 53.3% / 0.1);
+  }
+
+  .theme-green .hover\:bg-primary\/10:hover {
+    background-color: hsl(142.1 76.2% 36.3% / 0.1);
+  }
+
+  .theme-orange .hover\:bg-primary\/10:hover {
+    background-color: hsl(24.6 95% 53.1% / 0.1);
+  }
+
+  .theme-purple .hover\:bg-primary\/10:hover {
+    background-color: hsl(262.1 83.3% 57.8% / 0.1);
+  }
+
+  /* Secondary button hover states */
+  .theme-blue .hover\:bg-primary\/20:hover {
+    background-color: hsl(221.2 83.2% 53.3% / 0.2);
+  }
+
+  .theme-green .hover\:bg-primary\/20:hover {
+    background-color: hsl(142.1 76.2% 36.3% / 0.2);
+  }
+
+  .theme-orange .hover\:bg-primary\/20:hover {
+    background-color: hsl(24.6 95% 53.1% / 0.2);
+  }
+
+  .theme-purple .hover\:bg-primary\/20:hover {
+    background-color: hsl(262.1 83.3% 57.8% / 0.2);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Professional Button Variants */
+  .btn-gradient-primary {
+    @apply bg-[linear-gradient(135deg,hsl(var(--primary)),hsl(var(--primary-hover)))] text-primary-foreground;
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .btn-gradient-accent {
+    @apply bg-[linear-gradient(135deg,hsl(var(--accent-orange)),hsl(var(--accent-orange)))] text-accent-orange-foreground;
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  /* Professional Card Styles */
+  .card-elegant {
+    @apply bg-[linear-gradient(145deg,hsl(var(--card)),hsl(var(--muted)))] border-border;
+    box-shadow: var(--shadow-card);
+    border-radius: var(--radius-lg);
+  }
+  
+  .card-floating {
+    @apply bg-card border-border;
+    box-shadow: var(--shadow-floating);
+    border-radius: var(--radius-lg);
+  }
+  
+  /* Professional Text Styles */
+  .text-gradient-primary {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-primary);
+  }
+  
+  .text-gradient-accent {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-accent);
+  }
+  
+  /* Smooth Animations */
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+  
+  .transition-bounce {
+    transition: var(--transition-bounce);
+  }
+  
+  /* Professional Hover Effects */
+  .hover-lift {
+    @apply transition-smooth hover:translate-y-[-2px];
+  }
+  
+  .hover-lift:hover {
+    box-shadow: var(--shadow-floating);
+  }
+}
